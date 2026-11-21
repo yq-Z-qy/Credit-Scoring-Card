@@ -13,9 +13,10 @@
 - NumPy
 - Matplotlib
 - Scikit-learn
-- Toad
+- toad
 - Jupyter Notebook
-- Logistic Regression
+  
+建模方法：Logistic Regression（逻辑回归）
 
 ## 3. 项目主要流程
 
@@ -66,15 +67,18 @@
 | Recall | 18.28% |
 | F1-score | 28.04% |
 
+此外，训练集与测试集评分分布的 PSI 为 0.000107，
+说明本次随机划分下两组评分分布较为接近。
+该结果不代表模型在长期业务环境下具有稳定性。
 注：上述分类指标对应分类阈值 0.5。由于数据存在类别不平衡问题，Accuracy 较高并不代表模型能够识别大部分违约客户，模型仍需要结合业务需求进一步调整分类阈值。
 
 ## 5. 信用评分卡
 
 本项目采用以下评分转换公式：
 
-\[
+$$
 Score=600+\frac{50}{\ln 2}\ln\left(\frac{1-p}{p}\right)
-\]
+$$
 
 其中：
 
@@ -107,7 +111,8 @@ https://www.kaggle.com/c/GiveMeSomeCredit
 ## 8. 项目运行
 
 1. 下载本项目的 Jupyter Notebook 文件。
-2. 从 Kaggle 下载 Give Me Some Credit 数据集。
+2. 2. 从 Kaggle 下载 Give Me Some Credit 数据集，将
+   `cs-training.csv` 放置在 Notebook 指定的数据读取目录。
 3. 安装项目所需的 Python 依赖库。
 4. 根据 Notebook 中的数据读取路径放置数据文件。
 5. 使用 Jupyter Notebook 打开项目文件，并按顺序运行代码单元。
